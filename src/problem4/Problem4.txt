@@ -1,9 +1,0 @@
-Every day, Mike goes to his job by a bus, where he buys a ticket. On the ticket, there is a letter-code that can be represented as a string of upper-case Latin letters.
-Mike believes that the day will be successful in case two or more different letters in the code alternate. Otherwise, he believes that the day will be unlucky. 
-You are given a ticket code. Please determine, whether the day will be successful for Mike or not. 
-Return "YES" or "NO" (without quotes) corresponding to the situation.
-
-The input to the method should contain a single string S denoting the letter code on the ticket.
-The method should be backed with unit tests
-For each test case, output a single line containing "YES" (without quotes) in case the day will be successful and "NO" otherwise.
-Example  i/p = ABABAB o/p = YES  i/p = ABCABC o/p = YES  i/p = ABCXABC o/p = NO
