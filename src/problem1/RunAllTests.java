@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ TestFile.class })
+@SuiteClasses({ Test_VCS_Repository.class })
 public class RunAllTests {
 
 }

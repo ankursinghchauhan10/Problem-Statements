@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestFile {
+public class Test_Maahishmati_Army {
 	
-	static Solution ob;
+	static Maahishmati_Army ob;
 	
 	@BeforeClass
 	public static void init(){
-		ob = new Solution();
+		ob = new Maahishmati_Army();
 	}
 	
 	

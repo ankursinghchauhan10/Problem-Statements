@@ -5,8 +5,7 @@ import java.util.Arrays;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class Solution {
-
+public class VCS_Repository {
 	
 	/**
 	 * 
@@ -18,7 +17,7 @@ public class Solution {
 	 * @return count of files which are "Tracked and Ignored" and count of files 
 	 * which are "Untracked and Unignored".
 	 */
-	public String VCS(int N, int M, int K, Integer A[], Integer B[]) {
+	public String getAllFileCount(int N, int M, int K, Integer A[], Integer B[]) {
 
 		ArrayList<Integer> ignoredFileList = new ArrayList<>(Arrays.asList(A));
 		ArrayList<Integer> trackedFileList = new ArrayList<>(Arrays.asList(B));

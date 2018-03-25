@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestFile {
+public class Test_VCS_Repository {
 	
-	static Solution ob;
+	static VCS_Repository ob;
 	
 	@BeforeClass
 	public static void init(){
-		ob = new Solution();
+		ob = new VCS_Repository();
 	}
 	
 	
@@ -28,7 +28,7 @@ public class TestFile {
 		Integer B[] = { 3, 4 };
 		String expected = "0 , 0";*/
 
-		String output = ob.VCS(N, M, K, A, B);
+		String output = ob.getAllFileCount(N, M, K, A, B);
 		
 		//Output of the VCS Function
 		System.out.println(output);

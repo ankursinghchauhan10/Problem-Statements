@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestFile {
+public class Test_PalindromeNumbers {
 	
-	static Solution ob ;
+	static PalindromeNumbers ob ;
 	
 	@BeforeClass
 	public static void init(){
-		ob = new Solution();
+		ob = new PalindromeNumbers();
 	}
 	
 	
@@ -21,7 +21,7 @@ public class TestFile {
 		int L = 123, R = 150;
 		long expected = 272;
 
-		long output = ob.sumOFPalindromeNumbers(L, R);
+		long output = ob.getSumOFPalindromeNumbers(L, R);
 
 		//Output of the sumOFPalindromeNumbers Function
 		System.out.println(output);
