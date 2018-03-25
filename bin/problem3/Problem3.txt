@@ -1,6 +1,0 @@
-A number is called palindromic if its decimal representation is a palindrome. 
-You are given a range, described by a pair of integers L and R. 
-Write a method to Find the sum of all palindromic numbers lying in the range [L, R], inclusive of both the extrema.
-The method should accept two integers and return a long value which is sum of all the palindrome numbers between the given numbers. 
-The method should be backed by unit tests.
-Example – I/p = 123,150 o/p =  272 ( 141+131)
