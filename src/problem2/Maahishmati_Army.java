@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class Solution {
+public class Maahishmati_Army {
 
 	ArrayList<Integer> soldiers_weapons_count;
 	/**

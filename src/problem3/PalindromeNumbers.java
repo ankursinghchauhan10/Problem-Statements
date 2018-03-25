@@ -1,7 +1,7 @@
 package problem3;
 
 
-public class Solution {
+public class PalindromeNumbers {
 
 	
 	/**
@@ -10,7 +10,7 @@ public class Solution {
 	 * @param r Right most number of given range
 	 * @return sum of all the palindrome numbers
 	 */
-	public long sumOFPalindromeNumbers(int l, int r) {
+	public long getSumOFPalindromeNumbers(int l, int r) {
 
 		int temp = 0, n = 0, m = 0, sum = 0, total = 0;
 
