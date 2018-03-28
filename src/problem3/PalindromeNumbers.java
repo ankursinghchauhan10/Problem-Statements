@@ -1,33 +1,70 @@
 package problem3;
 
+import java.util.logging.Logger;
+
+import util_package.LoggerClass;
+
 
 public class PalindromeNumbers {
 
+	/** The logger. */
+    private Logger logger;
+	
+    /**
+     * Instantiates a new PalindromeNumbers
+     */
+	public PalindromeNumbers() {
+		logger = LoggerClass.getLocalLogger(this);
+	}
 	
 	/**
 	 * 
-	 * @param l Left most number of given range
-	 * @param r Right most number of given range
+	 * @param startingNumber Left most number of given range
+	 * @param endingNumber Right most number of given range
 	 * @return sum of all the palindrome numbers
 	 */
-	public long getSumOFPalindromeNumbers(int l, int r) {
+	public long getSumOFPalindromeNumbers(int startingNumber, int endingNumber) {
 
-		int temp = 0, n = 0, m = 0, sum = 0, total = 0;
+		long total = 0;
 
-		for (int i = l; i <= r; i++) {
-			temp = i;
-			sum = 0;
-			while (temp > 0) {
-				sum = (sum * 10) + (temp % 10);
-				temp = temp / 10;
+		logger.info("Starting number " + startingNumber + " , Ending Number "
+				+ endingNumber);
+
+		if (startingNumber <= endingNumber) {
+			for (int number = startingNumber; number <= endingNumber; number++) {
+				if (isPalindrome(number)) {
+					logger.info(number + " is Palindrome number");
+					total += number;
+				}
+
 			}
-
-			if (sum == i) {
-				total += sum;
-			}
+		} else {
+			logger.severe("Starting number can not be greater than ending number");
 		}
+
+		logger.info("Sum of Palindrome number is " + total);
 
 		return total;
 	}
 
+	/**
+	 * Check if given number is Palindrome or not
+	 * @param number number to check if palindrome
+	 * @return true if number is palindrome else false
+	 */
+	public boolean isPalindrome(int number) {
+		int tempNumber = number;
+		int sum = 0;
+
+		while (tempNumber != 0) {
+			sum = (sum * 10) + (tempNumber % 10);
+			tempNumber /= 10;
+		}
+
+		if (sum == number)
+			return true;
+		else
+			return false;
+
+	}
 }
