@@ -2,83 +2,145 @@ package problem1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import java.util.logging.Logger;
+import util_package.LoggerClass;
 
 public class VCS_Repository {
+
+	/** The logger. */
+    private Logger logger;
+    
+    /**
+     * Output
+     */
+    String output;
+    
+    ArrayList<Integer> tempList;
+    
+    /**
+     * Instantiates a new VCS_Repository
+     */
+	public VCS_Repository() {
+		logger = LoggerClass.getLocalLogger(this);
+	}
 	
 	/**
-	 * 
-	 * @param N = No of files
-	 * @param M = No of ignored source file
-	 * @param K = No of tracked source file
-	 * @param A = M Size array with ignored files
-	 * @param B = K Size array with tracked files.
+	 * @param noOfFiles = No of files
+	 * @param noOfIgnoredFiles = No of ignored source file
+	 * @param noOfTrackedFiles = No of tracked source file
+	 * @param ignoredFilesList = "noOfIgnoredFiles" Size array with ignored files
+	 * @param trackedFilesList = "noOfTrackedFiles" Size array with tracked files.
 	 * @return count of files which are "Tracked and Ignored" and count of files 
 	 * which are "Untracked and Unignored".
 	 */
-	public String getAllFileCount(int N, int M, int K, Integer A[], Integer B[]) {
-
-		ArrayList<Integer> ignoredFileList = new ArrayList<>(Arrays.asList(A));
-		ArrayList<Integer> trackedFileList = new ArrayList<>(Arrays.asList(B));
-
-		String output;
-
-		output = getTrackedAndIgnoredFileCount(ignoredFileList, trackedFileList)
-				+ " , "
-				+ getUntrackedAndUnignoredFileCount(ignoredFileList,
-						trackedFileList, N);
+	public String getAllFileCount(int noOfFiles, int noOfIgnoredFiles, int noOfTrackedFiles, Integer ignoredFilesList[], Integer trackedFilesList[]) {
+		output = null;
 		
+		logger.info("Total No. of Files :-" + noOfFiles + " , Ignored Files :-"
+				+ noOfIgnoredFiles + " , Tracked Files :-" + noOfTrackedFiles);
+		
+		/**
+		 * Validating the input
+		 */
+		if(noOfFiles >= noOfIgnoredFiles && noOfFiles >= noOfTrackedFiles){
+			
+			
+			ArrayList<Integer> ignoredFileList = new ArrayList<>(Arrays.asList(ignoredFilesList));
+			ArrayList<Integer> trackedFileList = new ArrayList<>(Arrays.asList(trackedFilesList));
+
+			
+
+			output = getTrackedAndIgnoredFileCount(ignoredFileList, trackedFileList)
+					+ " , "
+					+ getUntrackedAndUnignoredFileCount(ignoredFileList,
+							trackedFileList, noOfFiles);
+			logger.info("Result :- "+output);
+
+		}else{
+			logger.severe("No. of file count can never be less than the Tracked and Ignored files");
+		}
+				
 		return output;
 	}
 
 	
 	/**
 	 * 
-	 * @param list1 List of Ignored Files
-	 * @param list2 List of Tracked Files
+	 * @param ignoredFileList List of Ignored Files
+	 * @param trackedFileList List of Tracked Files
 	 * @return count of files which are tracked and ignored
 	 */
-	public int getTrackedAndIgnoredFileCount(ArrayList<Integer> list1,ArrayList<Integer> list2) {
-		ArrayList<Integer> list = new ArrayList<>();
+	public int getTrackedAndIgnoredFileCount(ArrayList<Integer> ignoredFileList,ArrayList<Integer> trackedFileList) {
+		logger.info("List of ignored files :- "+ignoredFileList+" , List of tracked files :- "+trackedFileList);
+		
+		/**
+		 * tempList is to keep all the Tracked and Ignored files together
+		 */
+		tempList = new ArrayList<>();
 
-		for (Integer i : list1) {
-			if (list2.contains(i)) {
-				list.add(i);
+		/**
+		 * finding the common files in both tracked and ignored files list
+		 */
+		for (Integer fileName : ignoredFileList) {
+			if (trackedFileList.contains(fileName)) {
+				tempList.add(fileName);
 			}
 		}
 
-		return list.size();
+		logger.info("Tracked And Ignored File Count :- "+tempList.size());
+		
+		return tempList.size();
 	}
 
 	
 	/**
 	 * 
-	 * @param list1 List of Ignored Files
-	 * @param list2 List of Tracked Files
+	 * @param ignoredFileList List of Ignored Files
+	 * @param trackedFileList List of Tracked Files
 	 * @return count of files which are tracked and ignored
 	 */
-	public int getTrackedAndIgnoredFileCount_V1(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+	/*public int getTrackedAndIgnoredFileCount_V1(ArrayList<Integer> ignoredFileList, ArrayList<Integer> trackedFileList) {
+		logger.info("List of ignored files :- "+ignoredFileList+" , List of tracked files :- "+trackedFileList);
+		
+		*//**
+		 * finding the common files in both tracked and ignored files list
+		 *//*
+		ignoredFileList.retainAll(trackedFileList);
 
-		list1.retainAll(list2);
-
-		return list1.size();
-	}
+		logger.info("Tracked And Ignored File Count :- "+ignoredFileList.size());
+		
+		return ignoredFileList.size();
+	}*/
 
 	/**
 	 * 
-	 * @param list1 List of Ignored Files
-	 * @param list2 List of Tracked Files
+	 * @param ignoredFileList List of Ignored Files
+	 * @param trackedFileList List of Tracked Files
 	 * @return count of files which are Untracked and Unignored
 	 */
-	public static int getUntrackedAndUnignoredFileCount(ArrayList<Integer> list1, ArrayList<Integer> list2, int N) {
-		ArrayList<Integer> list = new ArrayList<>();
-		for (int i = 1; i <= N; i++) {
-			list.add(i);
+	public int getUntrackedAndUnignoredFileCount(ArrayList<Integer> ignoredFileList, ArrayList<Integer> trackedFileList, int noOfFiles) {
+		logger.info("List of ignored files :- "+ignoredFileList+" , List of tracked files :- "+trackedFileList);
+		
+		/**
+		 * tempList is to keep all files List
+		 */
+		tempList = new ArrayList<>();
+		
+		/**
+		 * Creating list of all files
+		 */
+		for (int fileName = 1; fileName <= noOfFiles; fileName++) {
+			tempList.add(fileName);
 		}
 
-		list.removeAll(list1);
-		list.removeAll(list2);
-		return list.size();
+		/**
+		 * remove all common files from tempList
+		 */
+		
+		tempList.removeAll(ignoredFileList);
+		tempList.removeAll(trackedFileList);
+		
+		logger.info("Untracked And Unignored File Count :- "+tempList.size());
+		return tempList.size();
 	}
 }
