@@ -17,6 +17,10 @@ public class Test_VCS_Repository {
 	/** The logger. */
     static private Logger logger;
 	
+    /**
+     * Initialises class objects
+     */
+    
 	@BeforeClass
 	public static void init(){
 		
@@ -26,6 +30,9 @@ public class Test_VCS_Repository {
 		logger = LoggerClass.getLocalLogger(Test_VCS_Repository.class.getName());
 	}
 	
+	/**
+     * Set all class objects to null
+     */
 	@AfterClass
 	public static void tearDown(){
 		vcs_repository = null;

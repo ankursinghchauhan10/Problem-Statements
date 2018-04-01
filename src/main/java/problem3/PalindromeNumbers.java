@@ -18,7 +18,7 @@ public class PalindromeNumbers {
 	}
 	
 	/**
-	 * 
+	 * Calculates Sum of all palindrome numbers between given  range
 	 * @param startingNumber Left most number of given range
 	 * @param endingNumber Right most number of given range
 	 * @return sum of all the palindrome numbers

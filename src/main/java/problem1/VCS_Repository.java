@@ -25,6 +25,7 @@ public class VCS_Repository {
 	}
 	
 	/**
+	 * Calculates the count of "Tracked and Ignored" and count of "Untracked and Unignored" files 
 	 * @param noOfFiles = No of files
 	 * @param noOfIgnoredFiles = No of ignored source file
 	 * @param noOfTrackedFiles = No of tracked source file
@@ -65,7 +66,7 @@ public class VCS_Repository {
 
 	
 	/**
-	 * 
+	 * Calculates count of tracked and ignored files
 	 * @param ignoredFileList List of Ignored Files
 	 * @param trackedFileList List of Tracked Files
 	 * @return count of files which are tracked and ignored
@@ -94,7 +95,7 @@ public class VCS_Repository {
 
 	
 	/**
-	 * 
+	 * Calculates count of tracked and ignored files
 	 * @param ignoredFileList List of Ignored Files
 	 * @param trackedFileList List of Tracked Files
 	 * @return count of files which are tracked and ignored
@@ -113,7 +114,7 @@ public class VCS_Repository {
 	}*/
 
 	/**
-	 * 
+	 * Calculates count of Untracked and Unignored files
 	 * @param ignoredFileList List of Ignored Files
 	 * @param trackedFileList List of Tracked Files
 	 * @return count of files which are Untracked and Unignored

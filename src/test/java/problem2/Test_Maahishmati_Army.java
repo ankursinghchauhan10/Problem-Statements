@@ -21,6 +21,9 @@ public class Test_Maahishmati_Army {
 	
     String output;
 	
+    /**
+     * Initialises class objects
+     */
 	@BeforeClass
 	public static void init(){
 		
@@ -31,6 +34,9 @@ public class Test_Maahishmati_Army {
 		logger = LoggerClass.getLocalLogger(Test_VCS_Repository.class.getName());
 	}
 	
+	/**
+     * Set all class objects to null
+     */
 	@AfterClass
 	public static void tearDown(){
 		maahishmati_Army = null;

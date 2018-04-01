@@ -17,6 +17,9 @@ public class Test_PalindromeNumbers {
 	static PalindromeNumbers palindromeNumbers ;
 	static Logger logger ;
 	
+	/**
+     * Initialises class objects
+     */
 	@BeforeClass
 	public static void init(){
 		
@@ -26,6 +29,9 @@ public class Test_PalindromeNumbers {
 		logger = LoggerClass.getLocalLogger(Test_PalindromeNumbers.class.getName());
 	}
 	
+	/**
+     * Set all class objects to null
+     */
 	@AfterClass
 	public static void tearDown(){
 		palindromeNumbers = null;

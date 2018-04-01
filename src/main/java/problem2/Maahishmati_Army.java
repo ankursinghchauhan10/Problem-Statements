@@ -25,7 +25,7 @@ public class Maahishmati_Army {
 	
 	
 	/**
-	 * 
+	 * Checkes whether Army is ready for battle or not
 	 * @param noOfSoldiers Number of soldiers
 	 * @param countOfWeaponsEachSoldierHaving an array A1, A2, ..., AN, where Ai  denoted number of weapons ith soldier is having
 	 * @return returns whether Army is ready for battle or not
