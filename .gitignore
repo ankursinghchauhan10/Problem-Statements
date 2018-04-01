@@ -8,3 +8,6 @@ src/main/java/problem*/*.txt
 **/maven-archiver
 **/surefire-reports
 **/test-classes
+src/problem*
+src/util_package
+TestCoverage
