@@ -1,6 +1,13 @@
 .project
 .classpath
 .settings
-.settings/org.eclipse.jdt.core.prefs
-bin
-src/problem*/*.txt
+src/main/java/problem*/*.txt
+**/classes
+**/generated-sources
+**/generated-test-sources
+**/maven-archiver
+**/surefire-reports
+**/test-classes
+src/problem*
+src/util_package
+TestCoverage
